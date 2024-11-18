@@ -464,11 +464,14 @@ functionalPage =
           spec =
             Lecture
               { firstOrSecond = First,
-                slidesFile' = Nothing, -- Just (BBSlide "Generators.pdf")
+                slidesFile' = Just (BBCode "MonadicParsingBluePeter.hs"),
                 lectureRecording = Nothing
               },
           materials =
-            []
+            [ code "MonadicParsing.hs"
+            , code "MonadicParsingBluePeter.hs"
+            , sheet "Grogu.hs"
+            ]
         },
       --   slide "Generators.pdf"
       -- , code "questions.hs"
@@ -700,7 +703,7 @@ entryToCategory (Entry _ details materials) = case details of
     MkCat
       { title = "Mock Test",
         colour = "#EEEEDD",
-        counter = True,
+        counter = False,
         slidesLinkName = "",
         materialLinkName = "Materials"
       }
